@@ -1,0 +1,142 @@
+<head>
+  <script src="bundle.js"></script>
+  <link rel="stylesheet" type="text/css" href="styling.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+</head>
+
+<h1 class="master-header">Markov Chain Text Generator</h1>
+<h1 class="line"></h1>
+<div id="master">
+  
+  <body id="root">
+
+    <div class="chain-maker">
+        <div class="pre-fill">
+            <h2>Sample corpuses</h2>
+            <div class="corpus-buttons">
+            <button id="hobbit"> <strong>The Hobbit</strong></button>
+            <button id="hamlet"><strong>Hamlet</strong></button>
+          </div>
+        </div>
+        <form action="" id="form">
+          <h1>Corpus</h1>      
+          <textarea id="text-area" cols="30" rows="10"></textarea>
+          <div class="form-content">
+            <div class="num-words">
+              <label class="form-content-title"># of words in gram
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </label>
+            </div>
+            
+            <div class="num-words">
+              <label class="form-content-title">Words to generate
+              <input class="number" type="number" value="50"/>
+              </label>
+            </div>
+    
+            <div>
+              <button type="submit"><strong>Generate Text</strong></button>
+            </div>
+            
+            <div>
+              <button id="step">
+                <strong>Step-by-step</strong>
+              </button>
+            </div>
+          </div> 
+        </form>
+        <div class="generated-text-area">
+          <h1>Generated text</h1>
+          <div id="text-box">
+    
+          </div>
+          <h2>Current Gram</h2>
+          <div id="gram">
+    
+          </div>
+    
+          <h2>Array of succeeding words</h2>
+          <div id="key-map">
+    
+          </div>
+        </div>
+      
+    </div>
+    <div class="about">
+      <div class="about-chain">
+        <h2>How this text generator works</h2>
+        <div class="about-chain-text">
+          This text generator works by creating a Markov chain from a given corpus. This generator uses the following algorithm:
+          <div class="about-chain-inline">
+            <ol>
+              <li>Create an empty hash</li>
+              <li>For each word in the provided corpus: 
+                  <ol class="sublist">
+                      <li>Make that word a key in the hash</li>
+                      <li>Place each word that comes after it in the corpus into an array, then map that array to the original word </li>
+                  </ol>
+              </li>
+                
+            </ol>
+            
+          </div>
+          <p></p>
+          Consider the sentence 'John had many cats and dogs and fishes'. After this program runs, it returns an object that looks as follows:
+          <div class="about-chain-inline">
+              {John => [had], had => [many], many => [cats], cats => [and], and => [dogs, fishes], dogs => [and], fishes => []}
+          </div>
+          <p></p>
+          Using this object, we can generate random text through the following algorithm 
+          <div class="about-chain-inline">
+              <ol>
+                  <li>Pick a random key from the hash</li>
+                  <li>Append this key to our sentence</li>
+                  <li>Choose a random word from the array mapped to this key</li>
+                  <li>Make this word our new key and return to step 2</li>
+                </ol>
+          </div>
+          <p></p>
+          Note that we are not limited to using single words as keys. This generator can also use bigrams (two words) and trigrams (three words) as keys.
+        </div>
+      </div>
+
+      <div class="about-markov">
+        <h2>About Markov Chains</h2>
+        <div class="about-text">
+          
+          <div class="about-div">
+          Markov chains are mathematical systems consisting of a series of states, 
+          a set of transitions between each state, and a set of probabilities for each of these transitions occuring.
+          
+          <p></p>
+          
+          As an example, consider this simple markov chain modeling the weather:
+          </div>
+          <p></p>
+          <div class="real-image-container">
+              <img src="http://4.bp.blogspot.com/-u9XslQrACb8/VK71Cym3zQI/AAAAAAAAAA0/DAxkKTcCKvc/s1600/markovdiag.png" alt="markov chain image">
+          </div>
+          <p></p>
+          <div class="about-div">
+          This markov chain has 3 states: rainy, cloudy, and sunny. For each state, there is some probability for it transitioning to a 
+          different state or remaining in its current state. When the weather is rainy, it tends to remain rainy. When it's sunny, it tends to remain sunny. And when 
+          it's cloudy, it doesn't stay that way for very long. 
+          <p></p>
+          Markov chains offer more sophisticated modeling of events. If we were trying to model weather just based on the probability that 
+          a given day is rainy, cloudy, or sunny, we end up with rainy days evenly distributed in our output. This is innacurate to real-life
+          weather patterns - everyone knows that when it rains one day, it's likely to rain the next day as well. 
+          
+         
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
+</div>

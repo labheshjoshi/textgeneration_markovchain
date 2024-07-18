@@ -1,0 +1,47 @@
+I think I should have the chain generation happen in util, then be dispatched to the rest of the state 
+This should be the same for text generation 
+
+I could also have some step-by-step text generation 
+Not really sure how to do this...
+I could just make a really long promise chain of stuff... 
+I could have a 'chain' component, which I updated with the key and the mapped array 
+  I'm not sure how to not make this look choppy 
+  I want to emphasize that it's selecting something from the array 
+  Umm uhh 
+  could have it highlight the thing it ends up selecting, but this seems like it requires more actions
+  That might be the only way... 
+  I could have it dispatch something like a 'send-selection' to the state 
+  Then it changes the key...
+  I really need some help on this
+  Maybe this isn't even practical 
+I could also have a sentence component which I update when I add a word to the sentence 
+
+
+Use Canvas 
+
+I could just have the generation be step by step 
+As in, I show the key and the array of next words
+Drawing this in canvas seems way too hard 
+TA says that 'next button' will be cool 
+What about someone who wants to put in War and Peace 
+D3 is a data vis library 
+Provides good presets for generating these kinds of visualizations 
+
+
+Jesse says to start with color scheme for UI 
+www.canva.com has color schemes 
+Pintrest also has good color schemes 
+Google 'text heavy website design'
+Make it so it can be done without having to scroll
+
+
+Make the font bigger in the corpus 
+Maybe make a modal (this gives the corpus more space)
+  They'll probably click it 
+  Have the initial algorithm first, 
+  then have the 'about markov chains' pop up in a modal 
+Change button background 
+Pick a simple sentence from the hobbit to make the modal more engaging 
+Change the fonts, make it more colorful and varied 
+Make the Main Logo look like a Logo
+Have a border for an image stuff 
