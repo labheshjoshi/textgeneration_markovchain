@@ -1,6 +1,8 @@
 # MarkovChainTextGenerator
 
 ![image](https://github.com/user-attachments/assets/b9e2392a-2390-4b27-8750-2ef8d1d91855)
+
+
 ![image](https://github.com/user-attachments/assets/9f88ea0e-c664-47a6-955a-34e29c82102c)
 
 
